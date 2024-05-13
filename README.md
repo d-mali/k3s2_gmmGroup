@@ -1,2 +1,3 @@
-# Kalbos sintezavimas - pragramistai123
-Čia modelis kuris daro kalbą iš teksto
+# Speech synthesis - pragramistai123
+
+This is a model that generates speech from text.
