@@ -61,10 +61,14 @@ def list_generated_files():
     
     for audio_file, text_file in zip(audio_files, text_files):
         if audio_file.endswith('.wav') and text_file.endswith('.txt'):
-            file_label = tk.Label(file_frame, text=audio_file)
-            file_label.pack(side=tk.TOP, fill=tk.X)
-            play_button = tk.Button(file_frame, text="Play *not working*", command=lambda af=audio_file: play_audio(af))
-            play_button.pack(side=tk.TOP)
+            row_frame = tk.Frame(file_frame)
+            row_frame.pack(side=tk.TOP, fill=tk.X, pady=2)
+            
+            file_label = tk.Label(row_frame, text=audio_file, anchor='w')
+            file_label.pack(side=tk.LEFT, fill=tk.X, expand=True)
+            
+            play_button = tk.Button(row_frame, text="Play *not working*", command=lambda af=audio_file: play_audio(af))
+            play_button.pack(side=tk.RIGHT)
 
 def play_audio(audio_file):
     audio_path = os.path.join(audio_dir, audio_file)
